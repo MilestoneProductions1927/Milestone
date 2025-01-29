@@ -1,0 +1,466 @@
+/* Imposta il body per consentire lo scrolling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'BebasNeue-Bold', Arial, sans-serif, 'PPNeueMontreal-Medium';
+    color: #c14d16;
+    background-color: black;
+    overflow-y: auto !important; /* Permette lo scrolling verticale */
+    height: auto;
+}
+
+html, body {
+    overflow-x: hidden; /* Evita che qualsiasi elemento esca dalla larghezza della pagina */
+    width: 100%;
+}
+
+
+/* Header e Menu Hamburger */
+/* Header e Menu Hamburger */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Separa il menu a sinistra e il logo a destra */
+    align-items: center;
+    padding: 20px;
+    background-color: transparent;
+    z-index: 10;
+}
+
+/* Stile del logo in alto a destra */
+.logo-right {
+    position: absolute;
+    top: 20px; /* Distanza precisa dal bordo superiore */
+    right: 60px; /* Distanza dal bordo destro */
+    z-index: 22; /* Assicurati che sia sopra altri elementi */
+}
+
+.logo-right img {
+    width: 71px; /* Larghezza del logo */
+    height: 22px; /* Altezza del logo */
+    object-fit: contain; /* Mantiene le proporzioni */
+}
+
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6.75px; /* Distanza tra la X e il testo */
+    margin-bottom: 20px;
+    border-top: 16px;
+}
+
+.menu-toggle img {
+    width: 20px; /* Dimensione dell'immagine X */
+    height: 20px;
+    transition: opacity 0.3s ease; /* Aggiungi una transizione per un effetto fluido */
+
+}
+
+.menu-toggle p {
+    color: #F1F2EB;
+    font-family: "PP Neue Montreal";
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1;
+    transition: opacity 0.3s ease; /* Aggiungi una transizione per un effetto fluido */
+}
+
+.menu-toggle p.hidden {
+    opacity: 0; /* Imposta opacità a 0 quando nascosta */
+}
+.menu-toggle img.hidden {
+    opacity: 0; /* Imposta opacità a 0 quando nascosta */
+}
+
+
+/* Menu a Tendina */
+.nav-links {
+    position: fixed;
+    top: 0;
+    left: -112%; /* Menu completamente nascosto fuori dal viewport */
+    width: 35%;
+    height: 100%;
+    background-color: rgba(7, 6, 5, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuisce gli elementi */
+    padding: 20px;
+    transition: left 0.3s ease; /* Animazione per mostrare il menu */
+    z-index: 20;
+}
+
+.nav-links.active {
+    left: 0; /* Menu entra nel viewport */
+}
+
+.nav-links .close-menu-container {
+    display: flex;
+    align-items: center; /* Allinea gli elementi sulla stessa linea orizzontale */
+    gap: 8px; /* Spazio tra la "X" e il testo */
+    margin-bottom: 20px;
+}
+
+.close-menu {
+    display: flex;
+    align-items: center;
+    gap: 7px; /* Distanza tra la X e il testo */
+    margin-bottom: 20px;
+    border-top: 16px;
+}
+
+.close-menu img {
+    width: 20px; /* Dimensione dell'immagine X */
+    height: 20px;
+}
+
+.close-menu p {
+    color: #F1F2EB;
+    font-family: "PP Neue Montreal";
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0; /* Rimuove margini del testo */
+    line-height: 1;
+}
+
+
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.nav-links ul li {
+    margin: 20px 0;
+}
+
+.nav-links ul li a {
+    color: #F1F2EB;
+    font-family: "PP Neue Montreal";
+    font-size: 21px;
+    font-style: normal;
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 120%; /* 25.2px */
+    letter-spacing: -0.21px;
+}
+
+.nav-links .logo-placeholder {
+    position: absolute;
+    top: 20px; /* Distanza precisa dal bordo superiore */
+    right: 60px; /* Distanza dal bordo destro */
+    z-index: 22; /* Assicurati che sia sopra altri elementi */
+}
+
+.nav-links .logo-placeholder img {
+    width: 71px; /* Larghezza del logo */
+    height: 22px; /* Altezza del logo */
+    object-fit: contain; /* Mantiene le proporzioni */
+}
+
+/* Video di sfondo */
+#video-background {
+    opacity: 0.3;
+}
+
+
+/* Video Container */
+/* Contenuto principale */
+.video-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+
+/* Video Slide */
+.video-slide {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Video a tutta altezza */
+}
+
+/* Video */
+.video {
+    width: 100vw; /* Assicura che il video occupi il 100% della larghezza */
+    height: 100vh; /* Mantiene l'altezza a schermo intero */
+    object-fit: cover; /* Rende il video responsive */
+    opacity: 50%;
+}
+
+
+
+.sezione1{
+    max-height: 458px;
+    position: relative; /* Assicura che gli elementi interni possano essere posizionati */
+    padding: 50px 20px; /* Padding laterale per mantenere i margini */
+}
+
+.sezione1 a{
+    text-decoration: none;
+}
+
+.sezione1 h1{
+    color: #F1F2EB;
+    font-family: "BebasNeue-Bold";
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 60px */
+    letter-spacing: -0.66px;
+    width: 306px;
+}
+.sezione1 p{
+    color: #F1F2EB;
+    text-decoration: none;
+    font-family: "PP Neue Montreal";
+    font-size: 21px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 126px;
+height: 22px;
+}
+
+.button, .button a {
+    display: flex;
+    align-items: center;
+    gap: 7px; /* Distanza tra la freccia e il testo */
+    flex-direction: row-reverse; /* Inverte l'ordine degli elementi */
+    padding-left: 150px;
+}
+.sezione1 img {
+    width: 30px;
+    height: 19.125px;
+}
+
+.sezione1 .button-container{
+    display: flex;
+    align-items: center; /* Allinea gli elementi sulla stessa linea orizzontale */
+    gap: 8px; /* Spazio tra la "X" e il testo */
+    margin-bottom: 20px;
+}
+
+
+
+
+
+.sezione2{
+    max-height: 458px;
+    position: relative; /* Assicura che gli elementi interni possano essere posizionati */
+    padding: 50px 20px; /* Padding laterale per mantenere i margini */
+    background: #F2DCB4;
+}
+
+.sezione2 a{
+    text-decoration: none;
+}
+
+.sezione2 h1{
+    color: #C14D16;
+    font-family: "BebasNeue-Bold";
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 60px */
+    letter-spacing: -0.66px;
+    width: 306px;
+}
+.sezione2 p{
+    color: #C14D16;
+    text-decoration: none;
+    font-family: "PP Neue Montreal";
+    font-size: 21px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 126px;
+height: 22px;
+}
+
+.button2, .button2 a {
+    display: flex;
+    align-items: center;
+    gap: 7px; /* Distanza tra la freccia e il testo */
+    flex-direction: row-reverse; /* Inverte l'ordine degli elementi */
+    padding-left: 150px;
+}
+.sezione2 img {
+    width: 30px;
+    height: 19.125px;
+}
+
+.sezione2 .button2-container{
+    display: flex;
+    align-items: center; /* Allinea gli elementi sulla stessa linea orizzontale */
+    gap: 8px; /* Spazio tra la "X" e il testo */
+}
+
+
+
+
+
+.sezione3{
+    max-height: 635px;
+    position: relative; /* Assicura che gli elementi interni possano essere posizionati */
+    padding: 50px 20px; /* Padding laterale per mantenere i margini */
+    background: #C14D16;
+}
+
+.sezione3 a{
+    text-decoration: none;
+}
+
+
+.testo_sopra{
+    width: 335px;
+    color: #F2DCB4;
+font-family: "PP Neue Montreal";
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: 120%; /* 28.8px */
+letter-spacing: -0.264px;
+}
+.sezione25 p{
+    color: #F2DCB4;
+font-family: "PP Neue Montreal";
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: 120%; /* 28.8px */
+letter-spacing: -0.264px;
+}
+
+.sezione3 h1{
+    color: #F2DCB4;
+    font-family: "BebasNeue-Bold";
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 60px */
+    letter-spacing: -0.66px;
+    width: 306px;
+}
+.tasto{
+    color: #F2DCB4;
+    text-decoration: none;
+    font-family: "PP Neue Montreal";
+    font-size: 21px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 200px;
+height: 22px;
+}
+
+
+
+.sezione3 img {
+    width: 30px;
+    height: 19.125px;
+}
+
+.button3, .button3 a {
+    display: flex;
+    align-items: center;
+    gap: 7px; /* Distanza tra la freccia e il testo */
+    flex-direction: row-reverse; /* Inverte l'ordine degli elementi */
+    padding-left: 150px;
+}
+.sezione3 img {
+    width: 30px;
+    height: 19.125px;
+}
+
+.sezione3 .button3-container{
+    display: flex;
+    align-items: center; /* Allinea gli elementi sulla stessa linea orizzontale */
+    gap: 8px; /* Spazio tra la "X" e il testo */
+}
+
+
+
+
+
+
+
+/* Footer */
+.footer {
+    background-color: black;
+    color: #ffffff;
+    font-family: 'PP Neue Montreal', sans-serif;
+    font-size: 15px;
+    font-weight: 200;
+    letter-spacing: 1.5px;
+    padding-top: 50px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 50px; /* Separa dal contenuto sopra */
+}
+
+
+/* Forza il footer a stare sotto */
+.footer::after {
+    content: "";
+    display: block;
+    height: 100px; /* Spazio extra per evitare che venga tagliato */
+}
+
+.footer-logo{
+    padding-bottom: 20px;
+    margin-bottom: 20px; /* Aggiunge 13px di spazio tra ogni link */
+
+}
+
+.footer-logo img {
+    width: 115.875px;
+height: 82.535px;
+flex-shrink: 0;
+}
+
+.footer-column a {
+    color: #F1F2EB;
+    font-family: "PP Neue Montreal";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.15px;
+    text-decoration: none;
+    display: block; /* Forza il testo a essere su una nuova riga */
+    margin-bottom: 15px; /* Aggiunge 13px di spazio tra ogni link */
+}
+
+/* Rimuove lo spazio extra sotto l'ultimo link */
+.footer-column a:last-child {
+    margin-bottom: 20px;
+}
+
+.footer-bottom{
+    margin-top: 50px;
+    text-decoration: none;
+    text-size-adjust: 10px;
+    padding: 20px;
+}
+
+.footer p{
+    text-decoration: none;
+    margin: 20px;
+
+}
+

@@ -1,0 +1,238 @@
+/* Generale */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'BebasNeue-Bold', Arial, sans-serif, 'PPNeueMontreal-Medium';
+    overflow: hidden;
+    color: #c14d16;
+    background-color: black;
+}
+
+/* Header e Menu Hamburger */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Separa il menu a sinistra e il logo a destra */
+    align-items: center;
+    padding: 20px;
+    background-color: transparent;
+    z-index: 10;
+}
+
+/* Stile del logo in alto a destra */
+.logo-right {
+    position: absolute;
+    top: 20px; /* Distanza precisa dal bordo superiore */
+    right: 60px; /* Distanza dal bordo destro */
+    z-index: 22; /* Assicurati che sia sopra altri elementi */
+}
+
+.logo-right img {
+    width: 71px; /* Larghezza del logo */
+    height: 22px; /* Altezza del logo */
+    object-fit: contain; /* Mantiene le proporzioni */
+}
+
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6.75px; /* Distanza tra la X e il testo */
+    margin-bottom: 20px;
+    border-top: 16px;
+}
+
+.menu-toggle img {
+    width: 20px; /* Dimensione dell'immagine X */
+    height: 20px;
+    transition: opacity 0.3s ease; /* Aggiungi una transizione per un effetto fluido */
+
+}
+
+.menu-toggle p {
+    color: #F1F2EB;
+    font-family: "PP Neue Montreal";
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1;
+    transition: opacity 0.3s ease; /* Aggiungi una transizione per un effetto fluido */
+}
+
+.menu-toggle p.hidden {
+    opacity: 0; /* Imposta opacità a 0 quando nascosta */
+}
+.menu-toggle img.hidden {
+    opacity: 0; /* Imposta opacità a 0 quando nascosta */
+}
+
+
+/* Menu a Tendina */
+.nav-links {
+    position: fixed;
+    top: 0;
+    left: -112%; /* Menu completamente nascosto fuori dal viewport */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 6, 5, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuisce gli elementi */
+    padding: 20px;
+    transition: left 0.3s ease; /* Animazione per mostrare il menu */
+    z-index: 20;
+}
+
+.nav-links.active {
+    left: 0; /* Menu entra nel viewport */
+}
+
+.nav-links .close-menu-container {
+    display: flex;
+    align-items: center; /* Allinea gli elementi sulla stessa linea orizzontale */
+    gap: 8px; /* Spazio tra la "X" e il testo */
+    margin-bottom: 20px;
+}
+
+.close-menu {
+    display: flex;
+    align-items: center;
+    gap: 7px; /* Distanza tra la X e il testo */
+    margin-bottom: 20px;
+    border-top: 16px;
+}
+
+.close-menu img {
+    width: 20px; /* Dimensione dell'immagine X */
+    height: 20px;
+}
+
+.close-menu p {
+    color: #F1F2EB;
+    font-family: "PP Neue Montreal";
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0; /* Rimuove margini del testo */
+    line-height: 1;
+}
+
+
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.nav-links ul li {
+    margin: 20px 0;
+}
+
+.nav-links ul li a {
+    color: #F1F2EB;
+    font-family: "PP Neue Montreal";
+    font-size: 21px;
+    font-style: normal;
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 120%; /* 25.2px */
+    letter-spacing: -0.21px;
+}
+
+.nav-links .logo-placeholder {
+    position: absolute;
+    top: 20px; /* Distanza precisa dal bordo superiore */
+    right: 60px; /* Distanza dal bordo destro */
+    z-index: 22; /* Assicurati che sia sopra altri elementi */
+}
+
+.nav-links .logo-placeholder img {
+    width: 71px; /* Larghezza del logo */
+    height: 22px; /* Altezza del logo */
+    object-fit: contain; /* Mantiene le proporzioni */
+}
+
+
+
+/* Container dei Video */
+.video-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+
+.video-slide {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 50%;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 40px; /* Distanza dal bordo inferiore */
+    left: 20px; /* Distanza dal bordo sinistro */
+    width: 310px; /* Larghezza specifica */
+    color: #c14d16; /* Colore del testo */
+    text-align: left; /* Testo allineato a sinistra */
+    font-size: 60px; /* Dimensione del font */
+    font-family: 'BebasNeue-Bold', Arial, sans-serif; /* Font */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Ombra del testo */
+    font-style: normal; /* Stile del font */
+    font-weight: 400; /* Peso del font */
+    line-height: 100%; /* Altezza della linea */
+    letter-spacing: -0.6px; /* Spaziatura tra lettere */
+}
+.overlay a{
+    text-decoration: none;
+    position: absolute;
+    bottom: 40px; /* Distanza dal bordo inferiore */
+    left: 20px; /* Distanza dal bordo sinistro */
+    width: 310px; /* Larghezza specifica */
+    color: #c14d16; /* Colore del testo */
+    text-align: left; /* Testo allineato a sinistra */
+    font-size: 60px; /* Dimensione del font */
+    font-family: 'BebasNeue-Bold', Arial, sans-serif; /* Font */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Ombra del testo */
+    font-style: normal; /* Stile del font */
+    font-weight: 400; /* Peso del font */
+    line-height: 100%; /* Altezza della linea */
+    letter-spacing: -0.6px; /* Spaziatura tra lettere */
+}
+
+
+/* Effetto "hint" */
+.video-container .video-slide:first-child .video {
+    animation: bounce-video 1.5s infinite; /* Animazione ripetuta ogni 5 secondi */
+}
+
+@keyframes bounce-video {
+    0%, 100% {
+        transform: translateY(0); /* Posizione originale */
+    }
+    50% {
+        transform: translateY(-50px); /* Salto verso l'alto */
+    }
+}
+
+
+
+/* Rimuovi l'effetto trascinamento dai video successivi */
+.video-slide:not(:first-child) .video {
+    animation: none;
+}

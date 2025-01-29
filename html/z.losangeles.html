@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="animation.js" defer></script>
+    <link rel="stylesheet" href="z.events.css">
+    <style>
+        @font-face {
+            font-family: 'PP Neue Montreal';
+            src: url('./fonts/PPNeueMontreal-Book.woff2') format('woff2'),
+                 url('./fonts/PPNeueMontreal-Book.woff') format('woff');
+        }
+    
+        body {
+            margin: 0;
+            font-family: 'PP Neue Montreal';
+        }
+
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            padding: 40px 100px;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 10px, -5px;
+            padding: 0;
+        }
+
+       
+
+        nav ul li a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <body>
+        <!-- Menu Hamburger -->
+        <header>
+            <div class="menu-toggle">
+                <img src="images/men.svg" alt="Hamburger">
+                <p>MENÙ</p>
+            </div>
+        </header>
+    
+        <!-- Menu a Tendina -->
+        <div class="nav-links">
+            <div class="close-menu">
+                <img src="images/x.svg" alt="x">
+                <p>CLOSE</p>
+            </div>
+            <ul>
+                <li><a href="#about-us">ABOUT US</a></li>
+                <li><a href="#work">OUR WORK</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <div class="logo-placeholder">
+                <img src="images/logo.png" alt="Milestone Logo">
+            </div>
+        </div>
+
+<video id="video-background" autoplay muted loop>
+    <source src="videos/losangeles.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<main class="main-content">
+
+<div class="content">
+    <h1>LOS ANGELES FIRES</h1>
+    <p class="date-location">October 21st, 2023 &nbsp;  &nbsp; Butler, Pennsylvania,  U.S.A.</p>
+    <p class="description">
+        Former U.S. President Donald Trump was shot during a rally in Butler, Pennsylvania. The Republican Party candidate had just taken the stage outdoors when a man - later identified as 20-year-old Thomas Matthew Crooks - fired a rifle, striking the former president in the ear. 
+    </p>
+    <p class="commissioned"><span>Commissioned by:</span><br> Donald Trump, US Republican Party</p>
+    <p class="goal">
+    <span>Goal:<br> </span>Gain consensus for the next elections.</span>
+    </p>
+
+    <a href="00.work.html" class="go-back"> ← Go back</a>
+
+
+
+</div>
+
+
+    <div class="related">
+        <span> More involving attacks and assaults:</span>
+        <div class="thumbnails">
+            <a href="twin_tower.html"><img src="images/twint_tower_thumbnail.png" ></a>
+            <a href="capitol.html"><img src="images/capitol_thumbnail.png" ></a>
+        </div>
+    </div>
+</main>
+</body>
+</html>
